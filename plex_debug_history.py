@@ -54,7 +54,8 @@ def run_diagnostics():
 
     # 3. Test Endpoint A: Modern History Endpoint
     print("\n--- Testing Endpoint A: /status/sessions/history/all ---")
-    url_a = f"{PLEX_URL}/status/sessions/history/all?type=2"
+    # url_a = f"{PLEX_URL}/status/sessions/history/all?type=2"
+    url_a = f"{PLEX_URL}/status/sessions/history/all?type=2&sort=viewedAt:desc&accountID=all"
     try:
         res_a = requests.get(url_a, headers=headers, timeout=15)
         print(f"HTTP Status Code: {res_a.status_code}")
