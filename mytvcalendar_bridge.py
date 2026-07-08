@@ -6,7 +6,7 @@ import requests
 import urllib.parse
 
 # --- CONFIGURATION ---
-PLEX_URL = "http://1.2.3.4:32400"
+PLEX_URL = "http://172.20.30.50:32400"
 CONFIG_FILE = "mytvcalendar_config.json"
 MYTVCALENDAR_API = "https://mytvcalendar.com/api/plex-plugin"
 
@@ -145,7 +145,7 @@ class MyTVCalendarBridge:
 
         print("\n=== STEP 3: SYNCING HISTORICAL WATCH HISTORY ===")
         # Updated to the official universal history endpoint
-        url = f"{PLEX_URL}/status/sessions/history/all?type=2"
+        url = f"{PLEX_URL}/status/sessions/history/all?librarySectionID=2&X-Plex-Container-Start=0"
         
         try:
             headers = {
